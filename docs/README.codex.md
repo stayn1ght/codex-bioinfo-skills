@@ -11,7 +11,7 @@ bioinformatics workflow planning, validation, monitoring, and result review.
 Tell Codex:
 
 ```text
-Fetch and follow instructions from https://raw.githubusercontent.com/stayn1ght/codex-bioinfo-skills/refs/heads/main/.codex/INSTALL.md
+Fetch and follow instructions from https://raw.githubusercontent.com/stayn1ght/codex-bioinfo-skills/main/.codex/INSTALL.md
 ```
 
 Restart Codex after installation.
@@ -26,9 +26,8 @@ Restart Codex after installation.
 ## How It Works
 
 Codex discovers skills from its skill directory at startup. The install guide
-uses `$skill-installer` when available and falls back to cloning this repository
-under `${CODEX_HOME:-$HOME/.codex}` and symlinking each skill folder into
-`${CODEX_HOME:-$HOME/.codex}/skills`.
+clones this repository under `${CODEX_HOME:-$HOME/.codex}` and symlinks each
+skill folder into `${CODEX_HOME:-$HOME/.codex}/skills`.
 
 ## Usage
 
@@ -54,7 +53,7 @@ Use bioinfo-result-review to check whether these annotation outputs are ready fo
 
 ## Updating
 
-Re-run the install instructions, or run this if you used the shell fallback:
+Run:
 
 ```bash
 git -C "${CODEX_HOME:-$HOME/.codex}/codex-bioinfo-skills" pull --ff-only

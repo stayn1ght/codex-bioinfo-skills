@@ -2,23 +2,13 @@
 
 Install these skills into Codex so they can be discovered at startup.
 
-## Preferred Install
+## Prerequisites
 
-Use the `skill-installer` skill to install these GitHub skill directories:
+- Git
 
-```text
-$skill-installer install https://github.com/stayn1ght/codex-bioinfo-skills/tree/main/bioinfo-analysis-plan
-$skill-installer install https://github.com/stayn1ght/codex-bioinfo-skills/tree/main/bioinfo-validation-pyramid
-$skill-installer install https://github.com/stayn1ght/codex-bioinfo-skills/tree/main/bioinfo-watchdog
-$skill-installer install https://github.com/stayn1ght/codex-bioinfo-skills/tree/main/bioinfo-result-review
-```
+## Installation
 
-Restart Codex after installation.
-
-## Shell Fallback
-
-If `skill-installer` is unavailable, clone this repository and symlink each skill
-into Codex's skill directory:
+Clone this repository and link each skill directory into Codex's skill directory:
 
 ```bash
 CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
@@ -44,15 +34,58 @@ done
 
 Restart Codex after installation.
 
+## Verify
+
+```bash
+ls -la "${CODEX_HOME:-$HOME/.codex}/skills" | grep bioinfo-
+```
+
+You should see these skill directories:
+
+```text
+bioinfo-analysis-plan
+bioinfo-validation-pyramid
+bioinfo-watchdog
+bioinfo-result-review
+```
+
+## Alternative Install
+
+If you prefer Codex's built-in skill installer, ask Codex:
+
+```text
+$skill-installer install https://github.com/stayn1ght/codex-bioinfo-skills/tree/main/bioinfo-analysis-plan
+$skill-installer install https://github.com/stayn1ght/codex-bioinfo-skills/tree/main/bioinfo-validation-pyramid
+$skill-installer install https://github.com/stayn1ght/codex-bioinfo-skills/tree/main/bioinfo-watchdog
+$skill-installer install https://github.com/stayn1ght/codex-bioinfo-skills/tree/main/bioinfo-result-review
+```
+
+Restart Codex after installation.
+
 ## Updating
 
-If installed with `skill-installer`, reinstall the skills when you want a fresh
-copy.
-
-If installed with the shell fallback:
+If installed with the symlink method:
 
 ```bash
 git -C "${CODEX_HOME:-$HOME/.codex}/codex-bioinfo-skills" pull --ff-only
 ```
 
+If installed with `skill-installer`, reinstall the skills when you want a fresh
+copy.
+
 Restart Codex after updating.
+
+## Uninstalling
+
+```bash
+rm "${CODEX_HOME:-$HOME/.codex}/skills/bioinfo-analysis-plan"
+rm "${CODEX_HOME:-$HOME/.codex}/skills/bioinfo-validation-pyramid"
+rm "${CODEX_HOME:-$HOME/.codex}/skills/bioinfo-watchdog"
+rm "${CODEX_HOME:-$HOME/.codex}/skills/bioinfo-result-review"
+```
+
+Optionally delete the clone:
+
+```bash
+rm -rf "${CODEX_HOME:-$HOME/.codex}/codex-bioinfo-skills"
+```

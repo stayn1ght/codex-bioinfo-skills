@@ -9,15 +9,17 @@ Instruction-only Codex skills for bioinformatics analysis workflows.
 - `bioinfo-watchdog`: monitor long-running bioinformatics jobs in read-only mode.
 - `bioinfo-result-review`: review outputs before declaring analyses complete or ready for downstream use.
 
-## Install
+## Install from Codex
 
-Recommended: tell Codex to install the skills:
+Tell Codex:
 
 ```text
-Fetch and follow instructions from https://raw.githubusercontent.com/stayn1ght/codex-bioinfo-skills/refs/heads/main/.codex/INSTALL.md
+Fetch and follow instructions from https://raw.githubusercontent.com/stayn1ght/codex-bioinfo-skills/main/.codex/INSTALL.md
 ```
 
 See [docs/README.codex.md](docs/README.codex.md) for the Codex-focused install guide.
+
+## Alternative Install
 
 You can also install each skill from inside Codex with `$skill-installer`:
 
@@ -32,8 +34,20 @@ Restart Codex after installation so the new skills are discovered.
 
 ## Local Development Fallback
 
-If you are working from a local clone or cannot download from GitHub, copy the
-skill folders into Codex's skill directory:
+If you are working from a local clone, link or copy the skill folders into
+Codex's skill directory.
+
+Symlink local folders:
+
+```bash
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
+ln -s "$PWD/bioinfo-analysis-plan" "${CODEX_HOME:-$HOME/.codex}/skills/bioinfo-analysis-plan"
+ln -s "$PWD/bioinfo-validation-pyramid" "${CODEX_HOME:-$HOME/.codex}/skills/bioinfo-validation-pyramid"
+ln -s "$PWD/bioinfo-watchdog" "${CODEX_HOME:-$HOME/.codex}/skills/bioinfo-watchdog"
+ln -s "$PWD/bioinfo-result-review" "${CODEX_HOME:-$HOME/.codex}/skills/bioinfo-result-review"
+```
+
+Or copy local folders:
 
 ```bash
 mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
