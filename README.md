@@ -17,7 +17,7 @@ Tell Codex:
 Fetch and follow instructions from https://raw.githubusercontent.com/stayn1ght/codex-bioinfo-skills/main/.codex/INSTALL.md
 ```
 
-See [docs/README.codex.md](docs/README.codex.md) for the Codex-focused install guide.
+See [docs/INSTALL.md](docs/INSTALL.md) for the detailed install guide.
 
 ## Alternative Install
 
