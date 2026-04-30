@@ -11,15 +11,21 @@ Instruction-only Codex skills for bioinformatics analysis workflows.
 
 ## Install
 
-Recommended: install from inside Codex with `$skill-installer`.
-
-Replace `<owner>` with the GitHub owner or organization that hosts this repository.
+Recommended: tell Codex to install the skills:
 
 ```text
-$skill-installer install https://github.com/<owner>/codex-bioinfo-skills/tree/main/bioinfo-analysis-plan
-$skill-installer install https://github.com/<owner>/codex-bioinfo-skills/tree/main/bioinfo-validation-pyramid
-$skill-installer install https://github.com/<owner>/codex-bioinfo-skills/tree/main/bioinfo-watchdog
-$skill-installer install https://github.com/<owner>/codex-bioinfo-skills/tree/main/bioinfo-result-review
+Fetch and follow instructions from https://raw.githubusercontent.com/stayn1ght/codex-bioinfo-skills/refs/heads/main/.codex/INSTALL.md
+```
+
+See [docs/README.codex.md](docs/README.codex.md) for the Codex-focused install guide.
+
+You can also install each skill from inside Codex with `$skill-installer`:
+
+```text
+$skill-installer install https://github.com/stayn1ght/codex-bioinfo-skills/tree/main/bioinfo-analysis-plan
+$skill-installer install https://github.com/stayn1ght/codex-bioinfo-skills/tree/main/bioinfo-validation-pyramid
+$skill-installer install https://github.com/stayn1ght/codex-bioinfo-skills/tree/main/bioinfo-watchdog
+$skill-installer install https://github.com/stayn1ght/codex-bioinfo-skills/tree/main/bioinfo-result-review
 ```
 
 Restart Codex after installation so the new skills are discovered.
